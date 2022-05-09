@@ -66,7 +66,6 @@ int main(){
         incertar(numero,vec);
     }
 
-    while(numero != 0);
     imprimir(vec);
     sonPrimosVector(vec);
 
