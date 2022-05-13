@@ -11,50 +11,55 @@ int cantidadCaracteres(string a){
     return total;
 }
 
-void PalabraMasGrande(string a,string b){
-    cout<<"\n ";
-    if(cantidadCaracteres(a)>cantidadCaracteres(b)){
-        cout<<a<<" es la palbra mas grande ";
-    }
-    else{
-        cout<<b<<" es la palbra mas grande ";
-    }
- 
-}
-
-void limpiar(string a){
-    vector<char> vec(a.begin(),a.end());
+string PalabraMasGrande(vector<string> &vec){
+    int aux=cantidadCaracteres(vec[1]);
+    int j=0;
     for (size_t i = 0; i < vec.size(); ++i) {
-        vec[i]=tolower(vec[i]);
-        for(char j='a'; j<'z'; j++){
-            if(vec[i]==j){
-                cout<<vec[i];
-            }
+        if(cantidadCaracteres(vec[i])>aux){
+            aux=cantidadCaracteres(vec[i]);
+            j=i;
         }
-    } 
-    cout<<"\n";
+    }
+    return vec[j];
+
 }
 
+string limpiar(string a){
+    vector<char> vec = {'a', 'e', 'i', 'o', 'u',
+    'A', 'E', 'I', 'O', 'U'};
+     
+    for (int i = 0; i < a.length(); i++){
+        if (find(vec.begin(), vec.end(),a[i]) != vec.end()){
+            a = a.replace(i, 1, "");
+            i -= 1;
+        }
+    }
+
+    return a;
+}
 
 int main()
 {
+
+
     string string1,string2;
-    cout<<"la palabra 1 es: ";
-    getline(cin,string1);
-    cout<<"la palabra 2 es: ";
-    getline(cin,string2);
-    cout << "cadena 1:" << string1;
-    cout << "\n";
-    cout << "cadena 2:" << string2;
-    cout << "\n";
+    vector<string> palabra;
+    string str;
 
-    PalabraMasGrande(string1,string2);
-    cout<<endl;
+    cout<<"Escribe palbras, para terminar incertar 0 :";
+    while(cin>>str){
+        if(str=="0"){
+            break;
+        }
+        else{
+            palabra.push_back(str);
+        }
+    }
 
-    cout<<"palabras limpiadas "<<endl;
-
-    limpiar(string1);
-    limpiar(string2);
-
+    cout<<"La palabra mas grande es: "<<PalabraMasGrande(palabra)<<endl;
+    cout<<"palabras limpiadas son : "<<endl;
+    for (size_t i = 0; i < palabra.size(); ++i){
+        cout<<"Palabra "<<i+1<<" es : "<<limpiar(palabra[i])<<endl;
+    }
     return 0;
 }
