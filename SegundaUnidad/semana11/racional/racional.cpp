@@ -14,6 +14,7 @@ int mcd(int a, int b) {
         b = a%b;
         a = t;
     }
+    return a;
 }
 
 void Racional::reduce() {
