@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interacción Humano Computador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css" />
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style_videojuego.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Navbar -->
+    <nav x-data="{ isOpen: false }" class="bg-white shadow dark:bg-gray-800" style="background-color: rgb(85, 83, 88);">
+      <div class="container px-6 py-4 mx-auto">
+        <div class="lg:flex lg:items-center">
+          <div class="flex items-center justify-between">
+            <a href="#">
+              <img class="w-auto h-12 sm:h-20" src="img/logo.jpeg" alt="" />
+            </a>
+          </div>
+      
+          <div
+            x-cloak
+            :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+            class="absolute inset-x-0 z-20 flex-1 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-transparent lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between"
+          >
+            <div
+              class="flex flex-col text-white capitalize lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center"
+            >
+              <a
+                href="index.html"
+                class="mt-2 text-lg transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-300"
+                >Inicio</a
+              >
+              <a
+                href="#info"
+                class="mt-2 text-lg transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-300"
+                >Información</a
+              >
+              <a
+                href="#proceso"
+                class="mt-2 text-lg transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-300"
+                >Proceso</a
+              >
+              <a
+                href="#team"
+                class="mt-2 text-lg transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-300"
+                >Nosotros</a
+              >
+              <a
+                href="doc_juego.html"
+                class="mt-2 text-lg transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-300"
+                >Documentación</a
+              >
+            </div>
+      
+            <div class="flex justify-center mt-6 lg:flex lg:mt-0 lg:-mx-2">
+              
+            
+              <a
+                href="#"
+                class="mx-2 text-white transition-transform duration-300 transform hover:scale-110"
+                aria-label="Facebook"
+              >
+                <svg
+                  class="w-8 h-8 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 20v-8H7v-4h3V6.5C10 3.4 11.79 2 14.52 2c1.28 0 2.38.094 2.7.136v3.13l-1.85.001c-1.45 0-1.73.69-1.73 1.7v2.4h3.4l-.4 4h-3V20h-4z"
+                  />
+                </svg>
+              </a>
+            
+              <a
+                href="#"
+                class="mx-2 text-white transition-transform duration-300 transform hover:scale-110"
+                aria-label="Github"
+              >
+                <svg
+                  class="w-8 h-8 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 0C5.371 0 0 5.373 0 12.002c0 5.305 3.438 9.795 8.207 11.387.6.11.793-.262.793-.582 0-.288-.011-1.05-.017-2.06-3.338.725-4.042-1.615-4.042-1.615-.547-1.388-1.335-1.757-1.335-1.757-1.09-.746.082-.73.082-.73 1.204.084 1.84 1.237 1.84 1.237 1.07 1.832 2.805 1.303 3.491.996.108-.776.418-1.303.762-1.602-2.665-.3-5.467-1.333-5.467-5.93 0-1.309.467-2.381 1.235-3.222-.123-.303-.536-1.522.118-3.176 0 0 1.007-.324 3.3 1.232.957-.265 1.98-.398 3-.402 1.02.004 2.043.137 3 .402 2.29-1.556 3.295-1.232 3.295-1.232.656 1.654.243 2.873.12 3.176.77.841 1.232 1.913 1.232 3.222 0 4.61-2.807 5.625-5.482 5.922.43.37.823 1.1.823 2.216 0 1.6-.015 2.888-.015 3.283 0 .322.192.696.8.579C20.566 21.794 24 17.304 24 12.002 24 5.373 18.627 0 12 0z"
+                  />
+                </svg>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+
+    <!-- Sección de Información -->
+    <section
+      class="relative w-full h-screen py-10 px-6 bg-cover bg-center flex flex-col justify-center items-center"
+      style="background-image: url('img/ihc.jpeg')"
+    >
+      <!-- Superposición de color -->
+      <div class="absolute inset-0 bg-black opacity-80"></div>
+      <!-- Superposición con color negro y opacidad del 50% -->
+      <div class="text-center mb-8 text-white relative z-10">
+        <div class="text-center">
+          <h2 class="text-6xl font-bold">NUTRIBALANCE</h2>
+        </div>
+        <p class="mt-10 text-4xl">En desarrollo</p>
+      </div>
+      
+    </section>
+
+  
+    <section id="info" class="w-full py-12 px-6 bg-cover bg-center" style="background-color: rgb(152, 150, 156);">
+      <div class="text-center mb-10">
+        <h2 class="text-4xl font-bold" style="color: white;">Información</h2>
+      </div>
+      <!-- Fondo oscuro para el texto -->
+      <div class="flex flex-col items-center gap-8"> <!-- Cambié esto para centrar las cards -->
+        <!-- Card 1 -->
+        <div class="relative flex bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-[70%] max-w-full flex-row">
+          <div class="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none bg-clip-border rounded-xl shrink-0">
+            <img
+              src="https://img.freepik.com/vector-premium/ilustracion-concepto-problema_160308-1036.jpg"
+              alt="card-image"
+              class="object-contain w-full h-full"
+            />
+          </div>
+          <div class="p-6">
+            <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase" style="color: rgb(138, 172, 67);">
+              Proyecto
+            </h6>
+            <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900" style="color: rgb(111, 141, 47);">
+              PROBLEMA
+            </h4>
+            <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700" style="font-size: 23px;">
+              Las dificultades para seguir una dieta porque resulta complicado medir la cantidad exacta de nutrientes en los alimentos que consumen. Esto puede llevar a errores en el conteo de calorías y nutrientes, haciendo que no cumplan con sus objetivos dietéticos.
+            </p>
+            <!--<a href="#" class="inline-block">
+              <button class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+                </svg>
+              </button>
+            </a>-->
+          </div>
+        </div>
+    
+        <!-- Card 2 -->
+        <div class="relative flex bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-[70%] max-w-full flex-row">
+          <div class="p-6">
+            <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase" style="color: rgb(138, 172, 67);">
+              Proyecto
+            </h6>
+            <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900" style="color: rgb(111, 141, 47);">
+              OBJETIVO
+            </h4>
+            <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700" style="font-size: 23px;">
+              Acompañar a las personas a que cumplan con sus objetivos dietéticos de acuerdo a las indicaciones de su nutricionista.
+            </p>
+            
+            <!--<a href="#" class="inline-block">
+              <button class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+                </svg>
+              </button>
+            </a>-->
+          </div>
+          <div class="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-l-none bg-clip-border rounded-xl shrink-0">
+            <img
+              src="https://img.freepik.com/vector-premium/dibujado-mano-empresario-pie-tabla-crecimiento-como-simbolo-bosquejo-concepto-exito_160308-751.jpg"
+              alt="card-image"
+              class="object-cover w-full h-full"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="center-container">
+        
+          <button class="continue-application" onclick="document.getElementById('documento_proyecto').showModal()">
+            <div>
+              <div class="pencil"></div>
+              <div class="folder">
+                <div class="top">
+                  <svg viewBox="0 0 24 27">
+                    <path
+                      d="M1,0 L23,0 C23.5522847,-1.01453063e-16 24,0.44771525 24,1 L24,8.17157288 C24,8.70200585 23.7892863,9.21071368 23.4142136,9.58578644 L20.5857864,12.4142136 C20.2107137,12.7892863 20,13.2979941 20,13.8284271 L20,26 C20,26.5522847 19.5522847,27 19,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="paper"></div>
+              </div>
+            </div>
+
+            <p style="font-size: 20px">Ver documento del proyecto</p>
+          </button>
+        </a>
+      </div>
+    </section>
+
+    
+
+    <!-- component -->
+    <section
+    id="proceso"
+      class="relative min-h-screen flex flex-col justify-center bg-slate-50 overflow-hidden" style="background-color: rgb(214, 217, 130);"
+    >
+      <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
+        <div class="flex items-center justify-center min-h-1 bg-gray-10">
+          <h2 class="text-5xl text-gray-900 dark:text-white" style="color: rgb(44, 43, 46); font-weight: 500;">Proceso</h2>
+        </div>
+        <div
+          class="flex flex-col justify-center divide-y divide-slate-200 [&>*]:py-16"
+        >
+          <div class="w-full max-w-3xl mx-auto">
+            <!-- Vertical Timeline #2 -->
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-black before:to-transparent">
+              <!-- Item #1 -->
+              <div
+                class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+              >
+                <div
+                  class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
+                >
+                  <svg
+                    class="fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="10"
+                  >
+                    <path
+                      fill-rule="nonzero"
+                      d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"
+                    />
+                  </svg>
+                </div>
+                <!-- Card -->
+                <div
+                  class="w-[calc(110%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-8 rounded border border-slate-200 shadow flex items-start space-x-4 transform origin-top-left group-hover:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-7 h-7 text-gray-500 dark:text-gray-400 flex-shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
+                    />
+                  </svg>
+
+                  <div>
+                    <div
+                      class="flex items-center justify-between space-x-2 mb-1"
+                    >
+                      <div class="font-bold text-slate-900"></div>
+                      <time class="text-xs font-medium text-indigo-500"
+                        >07/11/2024</time
+                      >
+                    </div>
+                    <a href="#">
+                      <h5
+                        class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white" style="color: black;"
+                      >
+                        Creación de la idea
+                      </h5>
+                    </a>
+                    <p
+                      class="mb-3 font-normal text-gray-500 dark:text-gray-400"
+                    >
+                    Definir una herramienta digital que facilite el seguimiento de dietas personalizadas, optimizando la conexión entre nutricionistas y usuarios.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item #2 -->
+              <div
+                class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+              >
+                <div
+                  class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
+                >
+                  <svg
+                    class="fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="10"
+                  >
+                    <path
+                      fill-rule="nonzero"
+                      d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"
+                    />
+                  </svg>
+                </div>
+                <!-- Card -->
+                <div
+                  class="w-[calc(110%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-8 rounded border border-slate-200 shadow flex items-start space-x-4 transform origin-top-right group-hover:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-7 h-7 text-gray-500 dark:text-gray-400 flex-shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
+                    />
+                  </svg>
+
+                  <div>
+                    <div
+                      class="flex items-center justify-between space-x-2 mb-1"
+                    >
+                      <div class="font-bold text-slate-900"></div>
+                      <time class="text-xs font-medium text-indigo-500"
+                        >14/11/2024</time
+                      >
+                    </div>
+                    <a href="#">
+                      <h5
+                        class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white" style="color: black;"
+                      >
+                        Needfinding
+                      </h5>
+                    </a>
+                    <p
+                      class="mb-3 font-normal text-gray-500 dark:text-gray-400"
+                    >
+                    Identificar necesidades clave de personas que siguen dietas, como registrar alimentos fácilmente, acceder a consejos y obtener información nutricional.
+                    </p>
+                    <div class="px-5 py-4">
+                      <button
+                        onclick="document.getElementById('doc_need_1').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Diapositivas 1
+                      </button>
+                      <button
+                        onclick="document.getElementById('doc_need_2').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Diapositivas 2
+                      </button>
+                      <button
+                        onclick="document.getElementById('video_need_1').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Entrevista usuario 1
+                      </button>
+                      <button
+                        onclick="document.getElementById('video_need_2').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Entrevista usuario 2
+                      </button>
+                      <button
+                        onclick="document.getElementById('video_need_3').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Entrevista usuario 3
+                      </button>
+                      <button
+                        onclick="document.getElementById('video_need_4').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Entrevista usuario 4
+                      </button>
+                      <button
+                        onclick="document.getElementById('video_need_5').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Entrevista usuario 5
+                      </button>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              
+
+
+              <!-- Item #6 -->
+              <div
+                class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+              >
+                <div
+                  class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
+                >
+                  <svg
+                    class="fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="10"
+                  >
+                    <path
+                      fill-rule="nonzero"
+                      d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"
+                    />
+                  </svg>
+                </div>
+                <!-- Card -->
+                <div
+                  class="w-[calc(110%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-8 rounded border border-slate-200 shadow flex items-start space-x-4 transform origin-top-left group-hover:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-7 h-7 text-gray-500 dark:text-gray-400 flex-shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
+                    />
+                  </svg>
+
+                  <div>
+                    <div
+                      class="flex items-center justify-between space-x-2 mb-1"
+                    >
+                      <div class="font-bold text-slate-900"></div>
+                      <time class="text-xs font-medium text-indigo-500"
+                        >21/11/2024</time
+                      >
+                    </div>
+                    <a href="#">
+                      <h5
+                        class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white" style="color: black;"
+                      >
+                        Storyboarding
+                      </h5>
+                    </a>
+                    <p
+                      class="mb-3 font-normal text-gray-500 dark:text-gray-400"
+                    >
+                    Visualizar escenarios de uso de la aplicación, mostrando cómo los usuarios registran su dieta diaria y reciben información para mejorar su experiencia.
+                    </p>
+                    
+                  
+                    <div class="px-5 py-4 justify-center">
+                      <button
+                      onclick="document.getElementById('fotosStoryboarding').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150 mb-2"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Imágenes
+                      </button>
+                      <button
+                      onclick="document.getElementById('video_necesidades').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150 mb-2"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Explicando las necesidades
+                      </button>
+                      <button
+                      onclick="document.getElementById('video_story_1').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150 mb-2"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Validación usuario 1
+                      </button>
+                      <button
+                      onclick="document.getElementById('video_story_2').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150 mb-2"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Validación usuario 2
+                      </button>
+                      <button
+                      onclick="document.getElementById('video_story_3').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150 mb-2"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Validación usuario 3
+                      </button>
+                      <button
+                      onclick="document.getElementById('video_story_4').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150 mb-2"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Validación usuario 4
+                      </button>
+                      <button
+                      onclick="document.getElementById('video_story_5).showModal()"
+                        id="btn"
+                        class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150 mb-2"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Validación usuario 5
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item # TIPOS DE PERSONAS -->
+              <div
+                class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+              >
+                <div
+                  class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
+                >
+                  <svg
+                    class="fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="10"
+                  >
+                    <path
+                      fill-rule="nonzero"
+                      d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"
+                    />
+                  </svg>
+                </div>
+                <!-- Card -->
+                <div
+                  class="w-[calc(110%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-8 rounded border border-slate-200 shadow flex items-start space-x-4 transform origin-top-right group-hover:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-7 h-7 text-gray-500 dark:text-gray-400 flex-shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
+                    />
+                  </svg>
+
+                  <div>
+                    <div
+                      class="flex items-center justify-between space-x-2 mb-1"
+                    >
+                      <div class="font-bold text-slate-900"></div>
+                      <time class="text-xs font-medium text-indigo-500"
+                        >14/11/2024</time
+                      >
+                    </div>
+                    <a href="#">
+                      <h5
+                        class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white" style="color: black;"
+                      >
+                        Tipos de personas
+                      </h5>
+                    </a>
+                    <p
+                      class="mb-3 font-normal text-gray-500 dark:text-gray-400"
+                    >
+                    Identificar necesidades clave de personas que siguen dietas, como registrar alimentos fácilmente, acceder a consejos y obtener información nutricional.
+                    </p>
+                    <div class="px-5 py-4">
+                      
+                      <button
+                        onclick="document.getElementById('primario').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Persona primaria
+                      </button>
+                      <button
+                        onclick="document.getElementById('secundario-1').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Persona secundaria - 1
+                      </button>
+                      <button
+                        onclick="document.getElementById('secundario-2').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Persona secundaria - 2
+                      </button>
+                      <button
+                        onclick="document.getElementById('terciario').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Persona terciaria
+                      </button>
+                      <button
+                        onclick="document.getElementById('antipersona').showModal()"
+                        id="btn"
+                        class="bg-orange-500 mb-2 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+                        style="background-color: rgb(75, 185, 102)"
+                      >
+                        Antipersona
+                      </button>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- End: Vertical Timeline #2 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!--MODALES ------------------------------------------------------>
+
+<!-- MODAL DOCUMENTO PROYECTO -->
+<dialog
+id="documento_proyecto"
+class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+style="background-color: rgb(214, 217, 130);"
+>
+<!-- Header -->
+<div class="flex w-full h-auto justify-center items-center">
+  <div
+    class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+  >
+    <h2 style="font-size: 40px">DOCUMENTO - PROYECTO</h2>
+  </div>
+  <div
+    onclick="document.getElementById('documento_proyecto').close();"
+    class="flex w-1/12 h-auto justify-center cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-x"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </div>
+  <!--Header End-->
+</div>
+<div
+style="
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh; /* Ajusta la altura según sea necesario */
+/*background-color: #f0f0f0;  Solo para resaltar el div */
+padding-top: 0px;
+"
+>
+<iframe
+src="docs/DocumentoProyecto.pdf"
+style="
+width: 90%;
+height: 700px;
+border: none;
+"
+></iframe>
+</div>
+
+
+</dialog>
+
+<!--DOCUMENTO NECESIDADES 1-->
+<dialog
+id="doc_need_1"
+class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+style="background-color: rgb(214, 217, 130);"
+>
+<!-- Header -->
+<div class="flex w-full h-auto justify-center items-center">
+  <div
+    class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+  >
+    <h2 style="font-size: 40px"></h2>
+  </div>
+  <div
+    onclick="document.getElementById('doc_need_1').close();"
+    class="flex w-1/12 h-auto justify-center cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-x"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </div>
+  <!--Header End-->
+</div>
+<div
+style="
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh; /* Ajusta la altura según sea necesario */
+/*background-color: #f0f0f0;  Solo para resaltar el div */
+padding-top: 0px;
+"
+>
+<iframe
+src="docs/1NECESIDADES DE USUARIO.pdf"
+style="
+width: 90%;
+height: 700px;
+border: none;
+"
+></iframe>
+</div>
+
+
+</dialog>
+
+<!--DOCUMENTO NECESIDADES 2-->
+<dialog
+id="doc_need_2"
+class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+style="background-color: rgb(214, 217, 130);"
+>
+<!-- Header -->
+<div class="flex w-full h-auto justify-center items-center">
+  <div
+    class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+  >
+    <h2 style="font-size: 40px"></h2>
+  </div>
+  <div
+    onclick="document.getElementById('doc_need_2').close();"
+    class="flex w-1/12 h-auto justify-center cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-x"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </div>
+  <!--Header End-->
+</div>
+<div
+style="
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh; /* Ajusta la altura según sea necesario */
+/*background-color: #f0f0f0;  Solo para resaltar el div */
+padding-top: 0px;
+"
+>
+<iframe
+src="docs/2NeedFinding.pdf"
+style="
+width: 90%;
+height: 700px;
+border: none;
+"
+></iframe>
+</div>
+
+
+</dialog>
+
+
+
+
+
+ <!-- MODAL VIDEO NECESIDADES USUARIO 1 -->
+ <dialog
+ id="video_need_1"
+ class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+ style="background-color: rgb(214, 217, 130);"
+>
+ <!-- Header -->
+ <div class="flex w-full h-auto justify-center items-center">
+   <div
+     class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+   >
+     
+   </div>
+   <div
+     onclick="document.getElementById('video_need_1').close();"
+     class="flex w-1/12 h-auto justify-center cursor-pointer"
+   >
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       class="feather feather-x"
+     >
+       <line x1="18" y1="6" x2="6" y2="18"></line>
+       <line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
+   </div>
+   <!--Header End-->
+ </div>
+ <div style="
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh; /* Ajusta la altura según sea necesario */
+ /*background-color: #f0f0f0;  Solo para resaltar el div */
+ padding-top: 0px;
+">
+   <iframe width="1280" height="737" src="https://www.youtube.com/embed/JzquDUwS0bM" title="Entrevista - Persona B" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ 
+</dialog>
+
+ <!-- MODAL VIDEO NECESIDADES USUARIO 2 -->
+ <dialog
+ id="video_need_2"
+ class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+ style="background-color: rgb(214, 217, 130);"
+>
+ <!-- Header -->
+ <div class="flex w-full h-auto justify-center items-center">
+   <div
+     class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+   >
+     
+   </div>
+   <div
+     onclick="document.getElementById('video_need_2').close();"
+     class="flex w-1/12 h-auto justify-center cursor-pointer"
+   >
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       class="feather feather-x"
+     >
+       <line x1="18" y1="6" x2="6" y2="18"></line>
+       <line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
+   </div>
+   <!--Header End-->
+ </div>
+ <div style="
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh; /* Ajusta la altura según sea necesario */
+ /*background-color: #f0f0f0;  Solo para resaltar el div */
+ padding-top: 0px;
+">
+<iframe width="1280" height="737" src="https://www.youtube.com/embed/dEtDDhjX8x4" title="Usuario   C" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ 
+</dialog>
+
+
+ <!-- MODAL VIDEO NECESIDADES USUARIO 3 -->
+ <dialog
+ id="video_need_3"
+ class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+ style="background-color: rgb(214, 217, 130);"
+>
+ <!-- Header -->
+ <div class="flex w-full h-auto justify-center items-center">
+   <div
+     class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+   >
+     
+   </div>
+   <div
+     onclick="document.getElementById('video_need_3').close();"
+     class="flex w-1/12 h-auto justify-center cursor-pointer"
+   >
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       class="feather feather-x"
+     >
+       <line x1="18" y1="6" x2="6" y2="18"></line>
+       <line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
+   </div>
+   <!--Header End-->
+ </div>
+ <div style="
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh; /* Ajusta la altura según sea necesario */
+ /*background-color: #f0f0f0;  Solo para resaltar el div */
+ padding-top: 0px;
+">
+<iframe width="1280" height="787" src="https://www.youtube.com/embed/Gz8twZ6ygaM" title="USUARIO A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ 
+</dialog>
+
+
+ <!-- MODAL VIDEO NECESIDADES USUARIO 4 -->
+ <dialog
+ id="video_need_4"
+ class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+ style="background-color: rgb(214, 217, 130);"
+>
+ <!-- Header -->
+ <div class="flex w-full h-auto justify-center items-center">
+   <div
+     class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+   >
+     
+   </div>
+   <div
+     onclick="document.getElementById('video_need_4').close();"
+     class="flex w-1/12 h-auto justify-center cursor-pointer"
+   >
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       class="feather feather-x"
+     >
+       <line x1="18" y1="6" x2="6" y2="18"></line>
+       <line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
+   </div>
+   <!--Header End-->
+ </div>
+ <div style="
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh; /* Ajusta la altura según sea necesario */
+ /*background-color: #f0f0f0;  Solo para resaltar el div */
+ padding-top: 0px;
+">
+<iframe width="1280" height="737" src="https://www.youtube.com/embed/py0qDm7Qh4E" title="Usuario   D" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ 
+</dialog>
+
+
+ <!-- MODAL VIDEO NECESIDADES USUARIO 5 -->
+ <dialog
+ id="video_need_5"
+ class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+ style="background-color: rgb(214, 217, 130);"
+>
+ <!-- Header -->
+ <div class="flex w-full h-auto justify-center items-center">
+   <div
+     class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+   >
+     
+   </div>
+   <div
+     onclick="document.getElementById('video_need_5').close();"
+     class="flex w-1/12 h-auto justify-center cursor-pointer"
+   >
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       class="feather feather-x"
+     >
+       <line x1="18" y1="6" x2="6" y2="18"></line>
+       <line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
+   </div>
+   <!--Header End-->
+ </div>
+ <div style="
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh; /* Ajusta la altura según sea necesario */
+ /*background-color: #f0f0f0;  Solo para resaltar el div */
+ padding-top: 0px;
+">
+<iframe width="1280" height="737" src="https://www.youtube.com/embed/YTwlWtZvQwo" title="Usuario E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ 
+</dialog>
+
+
+ <!-- MODAL VIDEO STORYBOARDING 1 -->
+ <dialog
+ id="video_story_1"
+ class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+ style="background-color: rgb(214, 217, 130);"
+>
+ <!-- Header -->
+ <div class="flex w-full h-auto justify-center items-center">
+   <div
+     class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+   >
+     
+   </div>
+   <div
+     onclick="document.getElementById('video_story_1').close();"
+     class="flex w-1/12 h-auto justify-center cursor-pointer"
+   >
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       class="feather feather-x"
+     >
+       <line x1="18" y1="6" x2="6" y2="18"></line>
+       <line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
+   </div>
+   <!--Header End-->
+ </div>
+ <div style="
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh; /* Ajusta la altura según sea necesario */
+ /*background-color: #f0f0f0;  Solo para resaltar el div */
+ padding-top: 0px;
+">
+   <iframe width="1280" height="737" src="https://www.youtube.com/embed/JzquDUwS0bM" title="Entrevista - Persona B" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ 
+</dialog>
+
+
+ <!-- MODAL VIDEO STORYBOARDING 2 -->
+ <dialog
+ id="video_story_2"
+ class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+ style="background-color: rgb(214, 217, 130);"
+>
+ <!-- Header -->
+ <div class="flex w-full h-auto justify-center items-center">
+   <div
+     class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+   >
+     
+   </div>
+   <div
+     onclick="document.getElementById('video_story_2').close();"
+     class="flex w-1/12 h-auto justify-center cursor-pointer"
+   >
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       class="feather feather-x"
+     >
+       <line x1="18" y1="6" x2="6" y2="18"></line>
+       <line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
+   </div>
+   <!--Header End-->
+ </div>
+ <div style="
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh; /* Ajusta la altura según sea necesario */
+ /*background-color: #f0f0f0;  Solo para resaltar el div */
+ padding-top: 0px;
+">
+   <iframe width="1280" height="737" src="https://www.youtube.com/embed/JzquDUwS0bM" title="Entrevista - Persona B" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ 
+</dialog>
+
+ <!-- MODAL VIDEO STORYBOARDING 3 -->
+ <dialog
+ id="video_story_3"
+ class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+ style="background-color: rgb(214, 217, 130);"
+>
+ <!-- Header -->
+ <div class="flex w-full h-auto justify-center items-center">
+   <div
+     class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+   >
+     
+   </div>
+   <div
+     onclick="document.getElementById('video_story_3').close();"
+     class="flex w-1/12 h-auto justify-center cursor-pointer"
+   >
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       class="feather feather-x"
+     >
+       <line x1="18" y1="6" x2="6" y2="18"></line>
+       <line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
+   </div>
+   <!--Header End-->
+ </div>
+ <div style="
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh; /* Ajusta la altura según sea necesario */
+ /*background-color: #f0f0f0;  Solo para resaltar el div */
+ padding-top: 0px;
+">
+   <iframe width="1280" height="737" src="https://www.youtube.com/embed/JzquDUwS0bM" title="Entrevista - Persona B" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ 
+</dialog>
+
+ <!-- MODAL VIDEO STORYBOARDING 4 -->
+ <dialog
+ id="video_story_4"
+ class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+ style="background-color: rgb(214, 217, 130);"
+>
+ <!-- Header -->
+ <div class="flex w-full h-auto justify-center items-center">
+   <div
+     class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+   >
+     
+   </div>
+   <div
+     onclick="document.getElementById('video_story_4').close();"
+     class="flex w-1/12 h-auto justify-center cursor-pointer"
+   >
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       class="feather feather-x"
+     >
+       <line x1="18" y1="6" x2="6" y2="18"></line>
+       <line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
+   </div>
+   <!--Header End-->
+ </div>
+ <div style="
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh; /* Ajusta la altura según sea necesario */
+ /*background-color: #f0f0f0;  Solo para resaltar el div */
+ padding-top: 0px;
+">
+   <iframe width="1280" height="737" src="https://www.youtube.com/embed/JzquDUwS0bM" title="Entrevista - Persona B" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ 
+</dialog>
+
+
+ <!-- MODAL VIDEO STORYBOARDING 5 -->
+ <dialog
+ id="video_story_5"
+ class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+ style="background-color: rgb(214, 217, 130);"
+>
+ <!-- Header -->
+ <div class="flex w-full h-auto justify-center items-center">
+   <div
+     class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+   >
+     
+   </div>
+   <div
+     onclick="document.getElementById('video_story_5').close();"
+     class="flex w-1/12 h-auto justify-center cursor-pointer"
+   >
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       class="feather feather-x"
+     >
+       <line x1="18" y1="6" x2="6" y2="18"></line>
+       <line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
+   </div>
+   <!--Header End-->
+ </div>
+ <div style="
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh; /* Ajusta la altura según sea necesario */
+ /*background-color: #f0f0f0;  Solo para resaltar el div */
+ padding-top: 0px;
+">
+   <iframe width="1280" height="737" src="https://www.youtube.com/embed/JzquDUwS0bM" title="Entrevista - Persona B" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ 
+</dialog>
+
+
+
+
+<!--DOCUMENTO PERSONA PRINCIPAL-->
+<dialog
+id="primario"
+class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+style="background-color: rgb(214, 217, 130);"
+>
+<!-- Header -->
+<div class="flex w-full h-auto justify-center items-center">
+  <div
+    class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+  >
+    <h2 style="font-size: 40px"></h2>
+  </div>
+  <div
+    onclick="document.getElementById('primario').close();"
+    class="flex w-1/12 h-auto justify-center cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-x"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </div>
+  <!--Header End-->
+</div>
+<div
+style="
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh; /* Ajusta la altura según sea necesario */
+/*background-color: #f0f0f0;  Solo para resaltar el div */
+padding-top: 0px;
+"
+>
+<iframe
+src="docs/primaria.pdf"
+style="
+width: 90%;
+height: 700px;
+border: none;
+"
+></iframe>
+</div>
+
+
+</dialog>
+
+<!--DOCUMENTO PERSONA SECUNDRIA 1-->
+<dialog
+id="secundario-1"
+class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+style="background-color: rgb(214, 217, 130);"
+>
+<!-- Header -->
+<div class="flex w-full h-auto justify-center items-center">
+  <div
+    class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+  >
+    <h2 style="font-size: 40px"></h2>
+  </div>
+  <div
+    onclick="document.getElementById('secundario-1').close();"
+    class="flex w-1/12 h-auto justify-center cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-x"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </div>
+  <!--Header End-->
+</div>
+<div
+style="
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh; /* Ajusta la altura según sea necesario */
+/*background-color: #f0f0f0;  Solo para resaltar el div */
+padding-top: 0px;
+"
+>
+<iframe
+src="docs/secundario-1.pdf"
+style="
+width: 90%;
+height: 700px;
+border: none;
+"
+></iframe>
+</div>
+
+
+</dialog>
+
+
+<!--DOCUMENTO PERSONA SECUNDARIA 2-->
+<dialog
+id="secundario-2"
+class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+style="background-color: rgb(214, 217, 130);"
+>
+<!-- Header -->
+<div class="flex w-full h-auto justify-center items-center">
+  <div
+    class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+  >
+    <h2 style="font-size: 40px"></h2>
+  </div>
+  <div
+    onclick="document.getElementById('secundario-2').close();"
+    class="flex w-1/12 h-auto justify-center cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-x"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </div>
+  <!--Header End-->
+</div>
+<div
+style="
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh; /* Ajusta la altura según sea necesario */
+/*background-color: #f0f0f0;  Solo para resaltar el div */
+padding-top: 0px;
+"
+>
+<iframe
+src="docs/secundario-2.pdf"
+style="
+width: 90%;
+height: 700px;
+border: none;
+"
+></iframe>
+</div>
+
+
+</dialog>
+
+
+<!--DOCUMENTO PERSONA TERCIARIO-->
+<dialog
+id="terciario"
+class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+style="background-color: rgb(214, 217, 130);"
+>
+<!-- Header -->
+<div class="flex w-full h-auto justify-center items-center">
+  <div
+    class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+  >
+    <h2 style="font-size: 40px"></h2>
+  </div>
+  <div
+    onclick="document.getElementById('terciario').close();"
+    class="flex w-1/12 h-auto justify-center cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-x"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </div>
+  <!--Header End-->
+</div>
+<div
+style="
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh; /* Ajusta la altura según sea necesario */
+/*background-color: #f0f0f0;  Solo para resaltar el div */
+padding-top: 0px;
+"
+>
+<iframe
+src="docs/terciario.pdf"
+style="
+width: 90%;
+height: 700px;
+border: none;
+"
+></iframe>
+</div>
+
+
+</dialog>
+
+
+<!--DOCUMENTO ANTIUSUARIO-->
+<dialog
+id="antipersona"
+class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+style="background-color: rgb(214, 217, 130);"
+>
+<!-- Header -->
+<div class="flex w-full h-auto justify-center items-center">
+  <div
+    class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+  >
+    <h2 style="font-size: 40px"></h2>
+  </div>
+  <div
+    onclick="document.getElementById('antipersona').close();"
+    class="flex w-1/12 h-auto justify-center cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-x"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </div>
+  <!--Header End-->
+</div>
+<div
+style="
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh; /* Ajusta la altura según sea necesario */
+/*background-color: #f0f0f0;  Solo para resaltar el div */
+padding-top: 0px;
+"
+>
+<iframe
+src="docs/antipersona.pdf"
+style="
+width: 90%;
+height: 700px;
+border: none;
+"
+></iframe>
+</div>
+
+
+</dialog>
+
+
+
+<!-- MODAL FOTOS STORYBOARDING -->
+<dialog
+id="fotosStoryboarding"
+class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+style="background-color: rgb(214, 184, 184)"
+>
+<!-- Header -->
+<div class="flex w-full h-auto justify-center items-center">
+  <div
+    class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+  >
+    <h2 style="font-size: 30px">STORYBOARDING - PROYECTO</h2>
+  </div>
+  <div
+    onclick="document.getElementById('fotosStoryboarding').close();"
+    class="flex w-1/12 h-auto justify-center cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-x"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </div>
+  <!--Header End-->
+</div>
+
+<!-- component -->
+<!-- This is an example component -->
+<div class="max-w-90% mx-auto" style="padding-top: 50px;">
+  <div id="default-carousel" class="relative" data-carousel="static" style="width: 80%; margin: auto; height: 70vh;">
+    <!-- Carousel wrapper------------------- AUMENTO DEL ALTO DE LAS FOTOS-->
+    <div
+      class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96"
+      style="height: 70vh;"
+    >
+      <!-- Item 1 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <span
+          class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800"
+          >First Slide</span
+        >
+        <img
+          src="img/story1.jpg"
+          class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 2 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img
+          src="img/story2.jpg"
+          class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img
+          src="img/story3.jpg"
+          class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img
+          src="img/story4.jpg"
+          class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img
+          src="img/story5.jpg"
+          class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img
+          src="img/story6.jpg"
+          class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img
+          src="img/story7.jpg"
+          class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img
+          src="img/story8.jpg"
+          class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img
+          src="img/story9.jpg"
+          class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+          alt="..."
+        />
+      </div>
+    </div>
+    <!-- Slider indicators -->
+    <div
+      class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2"
+    >
+      <button
+        type="button"
+        class="w-3 h-3 rounded-full"
+        aria-current="false"
+        aria-label="Slide 1"
+        data-carousel-slide-to="0"
+      ></button>
+      <button
+        type="button"
+        class="w-3 h-3 rounded-full"
+        aria-current="false"
+        aria-label="Slide 2"
+        data-carousel-slide-to="1"
+      ></button>
+      <button
+        type="button"
+        class="w-3 h-3 rounded-full"
+        aria-current="false"
+        aria-label="Slide 3"
+        data-carousel-slide-to="2"
+      ></button>
+    </div>
+    <!-- Slider controls -->
+    <button
+      type="button"
+      class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+      data-carousel-prev
+    >
+      <span
+        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+      >
+        <svg
+          class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          ></path>
+        </svg>
+        <span class="hidden">Previous</span>
+      </span>
+    </button>
+    <button
+      type="button"
+      class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+      data-carousel-next
+    >
+      <span
+        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+      >
+        <svg
+          class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+        <span class="hidden">Next</span>
+      </span>
+    </button>
+  </div>
+  <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+</div>
+</dialog>
+
+
+
+
+
+<!------------------------------------------------------------------>
+
+    <!-- Sección del Equipo -->
+    <section
+      class="pt-20 pb-20"
+      id="team"
+      style="background-color: rgb(245, 249, 246)"
+    >
+      <div class="flex flex-wrap justify-center text-center mb-24">
+        <div class="w-full lg:w-6/12 px-4">
+          <h2 class="text-4xl font-semibold text-blueGray-700">
+            Nuestro Equipo
+          </h2>
+          <!--<p class="text-lg leading-relaxed m-4 text-blueGray-500">
+            According to the National Oceanic and Atmospheric Administration,
+            Ted, Scambos, NSIDClead scentist, puts the potentially record
+            maximum.
+          </p>-->
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-center">
+        <div class="w-full md:w-6/12 lg:w-2/12 lg:mb-0 mb-12 px-8">
+          <div class="px-6">
+            <img
+              alt="..."
+              src="https://i.pinimg.com/736x/04/26/97/042697ed3bf0ad7876683527bb33bcbb.jpg"
+              class="shadow-lg rounded-full mx-auto max-w-120-px"
+            />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold text-blueGray-700">
+                Jesus Chancayauri
+              </h5>
+              <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                Web Developer
+              </p>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-2/12 lg:mb-0 mb-12 px-8">
+          <div class="px-6">
+            <img
+              alt="..."
+              src="img/jhonatan.jpeg"
+              class="shadow-lg rounded-full mx-auto max-w-120-px"
+            />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold text-blueGray-700">
+                Jhonatan Uscca
+              </h5>
+              <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                Marketing Specialist
+              </p>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-2/12 lg:mb-0 mb-12 px-8">
+          <div class="px-6">
+            <img
+              alt="..."
+              src="img/jayan.jpeg"
+              class="shadow-lg rounded-full mx-auto max-w-120-px"
+            />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold text-blueGray-700">Jayan Caceres</h5>
+              <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                UI/UX Designer
+              </p>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-2/12 lg:mb-0 mb-12 px-8">
+          <div class="px-6">
+            <img
+              alt="..."
+              src="https://i.pinimg.com/736x/1f/81/01/1f810137dfabac15d8791de40478b4ee.jpg"
+              class="shadow-lg rounded-full mx-auto max-w-120-px"
+            />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold text-blueGray-700">Berly Diaz</h5>
+              <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                Founder and CEO
+              </p>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-2/12 lg:mb-0 mb-12 px-8">
+          <div class="px-6">
+            <img
+              alt="..."
+              src="https://i.pinimg.com/474x/4c/dc/0b/4cdc0b4c2089dedecc2ae366280ac528.jpg"
+              class="shadow-lg rounded-full mx-auto max-w-120-px"
+            />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold text-blueGray-700">
+                Leonardo Montoya
+              </h5>
+              <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                Founder and CEO
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer id="contact" class="text-white py-6" style="background: rgb(85, 83, 88);">
+      <div class="container mx-auto text-center" style="font-size: 20px;">
+        <p style="color: rgb(138, 172, 67);">© 2024 Mi Sitio. Todos los derechos reservados.</p>
+        <ul class="flex justify-center space-x-4 mt-4">
+          <li><a href="#" class="hover:text-gray-200">Términos</a></li>
+          <li><a href="#" class="hover:text-gray-200">Privacidad</a></li>
+          <li><a href="#" class="hover:text-gray-200">Contacto</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+
+

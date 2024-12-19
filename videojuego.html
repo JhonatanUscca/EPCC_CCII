@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interacción Humano Computador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/script.js"></script>
+    <!--<link rel="stylesheet" href="css/style.css" />-->
+    <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css" />
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style_videojuego.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Navbar -->
+    <nav
+      x-data="{ isOpen: false }"
+      class="bg-white shadow dark:bg-gray-800"
+      style="background-color: rgb(85, 83, 88)"
+    >
+      <div class="container px-6 py-4 mx-auto">
+        <div class="lg:flex lg:items-center">
+          <div class="flex items-center justify-between">
+            <a href="#">
+              <img class="w-auto h-12 sm:h-20" src="img/logo.jpeg" alt="" />
+            </a>
+          </div>
+
+          <div
+            x-cloak
+            :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+            class="absolute inset-x-0 z-20 flex-1 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-transparent lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between"
+          >
+            <div
+              class="flex flex-col text-white capitalize lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center"
+            >
+              <a
+                href="index.html"
+                class="mt-2 text-lg transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-300"
+                >Inicio</a
+              >
+              <a
+                href="#info"
+                class="mt-2 text-lg transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-300"
+                >Proyectos</a
+              >
+              <a
+                href="#proceso"
+                class="mt-2 text-lg transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-300"
+                >Proceso</a
+              >
+              <a
+                href="#team"
+                class="mt-2 text-lg transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-300"
+                >Nosotros</a
+              >
+              <a
+                href="doc_juego.html"
+                class="mt-2 text-lg transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-300"
+                >Documentación</a
+              >
+            </div>
+
+            <div class="flex justify-center mt-6 lg:flex lg:mt-0 lg:-mx-2">
+              <a
+                href="#"
+                class="mx-2 text-white transition-transform duration-300 transform hover:scale-110"
+                aria-label="Facebook"
+              >
+                <svg
+                  class="w-8 h-8 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 20v-8H7v-4h3V6.5C10 3.4 11.79 2 14.52 2c1.28 0 2.38.094 2.7.136v3.13l-1.85.001c-1.45 0-1.73.69-1.73 1.7v2.4h3.4l-.4 4h-3V20h-4z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="mx-2 text-white transition-transform duration-300 transform hover:scale-110"
+                aria-label="Github"
+              >
+                <svg
+                  class="w-8 h-8 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 0C5.371 0 0 5.373 0 12.002c0 5.305 3.438 9.795 8.207 11.387.6.11.793-.262.793-.582 0-.288-.011-1.05-.017-2.06-3.338.725-4.042-1.615-4.042-1.615-.547-1.388-1.335-1.757-1.335-1.757-1.09-.746.082-.73.082-.73 1.204.084 1.84 1.237 1.84 1.237 1.07 1.832 2.805 1.303 3.491.996.108-.776.418-1.303.762-1.602-2.665-.3-5.467-1.333-5.467-5.93 0-1.309.467-2.381 1.235-3.222-.123-.303-.536-1.522.118-3.176 0 0 1.007-.324 3.3 1.232.957-.265 1.98-.398 3-.402 1.02.004 2.043.137 3 .402 2.29-1.556 3.295-1.232 3.295-1.232.656 1.654.243 2.873.12 3.176.77.841 1.232 1.913 1.232 3.222 0 4.61-2.807 5.625-5.482 5.922.43.37.823 1.1.823 2.216 0 1.6-.015 2.888-.015 3.283 0 .322.192.696.8.579C20.566 21.794 24 17.304 24 12.002 24 5.373 18.627 0 12 0z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="relative w-full h-screen py-10 px-6 bg-cover bg-center flex items-center"
+      style="background-color: rgb(175, 93, 93)"
+    >
+      <!-- Superposición de color -->
+      <div class="absolute inset-0 bg-black opacity-80"></div>
+
+      <div class="relative z-10 flex w-full h-full">
+        <!-- Imagen con bordes difuminados -->
+        <div class="w-1/2 flex justify-center items-center relative">
+          <div class="relative w-full h-full overflow-hidden">
+            <img
+              src="img/nmre.jpeg"
+              alt="Nightmare"
+              class="w-full h-full object-cover rounded-xl"
+              style="
+                mask-image: radial-gradient(
+                  circle,
+                  rgba(0, 0, 0, 1) 50%,
+                  rgba(0, 0, 0, 0) 100%
+                );
+                -webkit-mask-image: radial-gradient(
+                  circle,
+                  rgba(0, 0, 0, 1) 10%,
+                  rgba(0, 0, 0, 0) 70%
+                );
+              "
+            />
+          </div>
+        </div>
+
+        <!-- Contenido del texto y botón -->
+        <div class="w-1/2 flex flex-col justify-center items-center text-white">
+          <h2 class="text-8xl font-bold text-center">Nightmare</h2>
+          <p class="text-2xl text-center">Finalizado</p>
+          <a
+            href="#comprar"
+            class="mt-10 bg-gradient-to-r from-red-500 to-black-400 text-white font-bold text-2xl py-4 px-8 rounded-lg shadow-lg hover:scale-110 transition-transform"
+          >
+            Comprar Ahora
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="info"
+      class="w-full py-12 px-6 bg-cover bg-center"
+      style="background-color: rgb(66, 56, 56)"
+    >
+      <!-- Sección con imagen a la derecha y contenido a la izquierda -->
+      <div class="flex w-full gap-6 items-center h-full">
+        <!-- Contenido a la izquierda -->
+        <div class="w-1/2 p-6 h-full">
+          <h4
+            class="block mb-2 font-sans text-5xl font-semibold leading-snug tracking-normal text-blue-gray-900"
+            style="color: white"
+          >
+            Descripción del videojuego
+          </h4>
+          <p
+            class="block mb-8 font-sans text-base font-normal leading-relaxed text-white-0"
+            style="font-size: 23px; color: white"
+          >
+            El objetivo del videojuego es escapar de una habitación la cual
+            contiene una variedad de puzzles los cuales guiarán al jugador.
+          </p>
+
+          <div
+            class="w-1/2 flex flex-col justify-center items-center text-white"
+          >
+            <button
+              onclick="document.getElementById('myModal').showModal()"
+              id="btn"
+              class="mt-10 bg-gradient-to-r from-red-500 to-black-400 text-white font-bold text-2xl py-4 px-8 rounded-lg shadow-lg hover:scale-110 transition-transform"
+            >
+              Ver más
+            </button>
+          </div>
+        </div>
+
+        <!-- Imagen a la derecha -->
+        <div class="w-1/2 relative overflow-hidden rounded-xl h-full">
+          <img
+            src="img/j1.jpeg"
+            alt="card-image"
+            class="object-cover w-full h-full rounded-xl"
+          />
+        </div>
+      </div>
+    </section>
+
+
+<!-- MODALES-------------------------------------------------------------------------------------------------- -->
+    <!-- PROCESO DE DESARROLLO -->
+    <dialog
+      id="myModal"
+      class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+      style="background-color: rgb(214, 184, 184)"
+    >
+      <!-- Header -->
+      <div class="flex w-full h-auto justify-center items-center">
+        <div
+          class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+        >
+          <h2 style="font-size: 30px">PROCESO DE DESARROLLO - VIDEOJUEGO</h2>
+        </div>
+        <div
+          onclick="document.getElementById('myModal').close();"
+          class="flex w-1/12 h-auto justify-center cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </div>
+        <!--Header End-->
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <!-- Information Modal -->
+        <div class="md:w-4/5 rounded-lg shadow-lg bg-white my-3">
+          <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+            <div>
+              <i class="fas fa-exclamation-circle text-black-500"></i>
+              <span class="font-bold text-gray-700 text-lg"
+                >Creación de la idea</span
+              >
+            </div>
+            
+          </div>
+
+          <div class="px-10 py-5 text-gray-600">
+            Se propuso un videojuego de acertijos en el que el jugador debe
+            escapar de una habitación resolviendo puzzles para obtener una
+            contraseña. El jugador está secuestrado y debe encontrar pistas para
+            escapar. El objetivo era diseñar los acertijos y puzzles necesarios
+            para que el jugador obtenga la contraseña y pueda escapar de la
+            habitación.
+          </div>
+
+          <div class="px-5 py-4 flex justify-center">
+            <button
+              onclick="document.getElementById('documento_videojuego').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Ver documento del proyecto
+            </button>
+          </div>
+        </div>
+
+        <!-- Warning Modal -->
+        <div class="md:w-4/5 sm:w-full rounded-lg shadow-lg bg-white my-3">
+          <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+            <div>
+              <i class="fa fa-pencil-alt text-black-500"></i>
+
+              <span class="font-bold text-gray-700 text-lg">Scketching</span>
+            </div>
+            
+          </div>
+
+          <div class="px-10 py-5 text-gray-600">
+            Se realizaron los primeros bocetos del juego, incluyendo el ambiente y los acertijos. Se definieron diversas interfaces, como la visualización de las manos y los escenarios en primera persona.
+          </div>
+
+          <div class="px-5 py-4 flex justify-center">
+            <button
+              onclick="document.getElementById('fotosScketching').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Ver fotos
+            </button>
+          </div>
+        </div>
+
+        <!-- Warning Modal -->
+        <div class="md:w-4/5 sm:w-full rounded-lg shadow-lg bg-white my-3">
+          <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+            <div>
+              <i class="fa fa-cogs"></i>
+
+              <span class="font-bold text-gray-700 text-lg">Prototipo</span>
+            </div>
+            
+          </div>
+
+          <div class="px-10 py-5 text-gray-600">
+            Se construyó un prototipo interactivo donde los usuarios podían realizar las mecánicas básicas del juego. Los usuarios brindaron opiniones y críticas sobre las mecánicas, proporcionando información valiosa sobre los aciertos y errores del diseño.
+          </div>
+
+          <div class="px-5 py-4 flex justify-center">
+            <button
+            onclick="document.getElementById('video_prototipo').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Usuario 1
+            </button>
+            <button
+            onclick="document.getElementById('video_prototipo').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Usuario 2
+            </button>
+          </div>
+        </div>
+
+        <!-- Warning Modal -->
+        <div class="md:w-4/5 sm:w-full rounded-lg shadow-lg bg-white my-3">
+          <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+            <div>
+              
+              <i class="fa fa-search"></i>
+              <span class="font-bold text-gray-700 text-lg">Evaluación con Usuarios - Primera Fase</span>
+            </div>
+            
+          </div>
+
+          <div class="px-10 py-5 text-gray-600">
+            El primer prototipo en VR ofreció a los jugadores una experiencia inmersiva para colaborar y enfrentar desafíos. Se incorporaron actividades que requerían trabajo en equipo para progresar. Los jugadores tuvieron dificultades para encontrar la combinación de números y no notaron el símbolo clave en el suelo, por lo que se iluminó para hacerlo más visible. También se redujo la intensidad de la luz del candil. A pesar de estos problemas, los usuarios dijeron que jugarían nuevamente.
+          </div>
+
+          <div class="px-5 py-4 flex justify-center">
+            <button
+            onclick="document.getElementById('video_prototipo').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Usuario 1
+            </button>
+            <button
+            onclick="document.getElementById('video_prototipo').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Usuario 1 - feedback
+            </button>
+          </div>
+          </div>
+          <!-- Warning Modal -->
+        <div class="md:w-4/5 sm:w-full rounded-lg shadow-lg bg-white my-3">
+          <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+            <div>
+              <i class="fa fa-check-circle"></i>
+
+              <span class="font-bold text-gray-700 text-lg">Evaluación con Usuarios - Segunda Fase</span>
+            </div>
+            
+          </div>
+
+          <div class="px-10 py-5 text-gray-600">
+            Se mejoró la visibilidad del símbolo en el suelo con iluminación destacada y se redujo la intensidad de la luz del candil, mejorando la experiencia del jugador. Los jugadores encontraron difícil hallar la combinación de números, pero se sintieron entretenidos y desafiados. Sugerieron agregar más puzzles y algunos considerarían comprar el juego si se alargara
+          </div>
+
+          <div class="px-6 py-6 flex justify-center">
+            <button
+            onclick="document.getElementById('video_prototipo').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Usuario 1
+            </button>
+            <button
+            onclick="document.getElementById('video_prototipo').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Usuario 1 - feedback
+            </button>
+
+            <button
+            onclick="document.getElementById('video_prototipo').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Usuario 2
+            </button>
+            <button
+            onclick="document.getElementById('video_prototipo').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Usuario 2 - feedback
+            </button>
+            <button
+            onclick="document.getElementById('video_prototipo').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Usuario 3
+            </button>
+            <button
+            onclick="document.getElementById('video_prototipo').showModal()"
+              id="btn"
+              class="bg-orange-500 mr-1 rounded text-sm py-2 px-3 text-white hover:bg-orange-600 transition duration-150"
+              style="background-color: rgb(252, 95, 95)"
+            >
+              Usuario 3 - feedback
+            </button>
+          </div>
+        </div>
+        </div>
+
+        
+      </div>
+    </dialog>
+
+
+    <!-- MODAL FOTOS SCKETCHING -->
+    <dialog
+      id="fotosScketching"
+      class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+      style="background-color: rgb(214, 184, 184)"
+    >
+      <!-- Header -->
+      <div class="flex w-full h-auto justify-center items-center">
+        <div
+          class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+        >
+          <h2 style="font-size: 30px">SCKETCHING - VIDEOJUEGO</h2>
+        </div>
+        <div
+          onclick="document.getElementById('fotosScketching').close();"
+          class="flex w-1/12 h-auto justify-center cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </div>
+        <!--Header End-->
+      </div>
+
+      <!-- component -->
+      <!-- This is an example component -->
+      <div class="max-w-90% mx-auto" style="padding-top: 50px;">
+        <div id="default-carousel" class="relative" data-carousel="static" style="width: 80%; margin: auto; height: 70vh;">
+          <!-- Carousel wrapper------------------- AUMENTO DEL ALTO DE LAS FOTOS-->
+          <div
+            class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96"
+            style="height: 70vh;"
+          >
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <span
+                class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800"
+                >First Slide</span
+              >
+              <img
+                src="img/scketching1.jpeg"
+                class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                alt="..."
+              />
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="img/scketching2.jpeg"
+                class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                alt="..."
+              />
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="img/scketching3.jpeg"
+                class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                alt="..."
+              />
+            </div>
+          </div>
+          <!-- Slider indicators -->
+          <div
+            class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2"
+          >
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 1"
+              data-carousel-slide-to="0"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 2"
+              data-carousel-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 3"
+              data-carousel-slide-to="2"
+            ></button>
+          </div>
+          <!-- Slider controls -->
+          <button
+            type="button"
+            class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            data-carousel-prev
+          >
+            <span
+              class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                ></path>
+              </svg>
+              <span class="hidden">Previous</span>
+            </span>
+          </button>
+          <button
+            type="button"
+            class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            data-carousel-next
+          >
+            <span
+              class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+              <span class="hidden">Next</span>
+            </span>
+          </button>
+        </div>
+        <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+      </div>
+    </dialog>
+
+
+    <!-- MODAL DOCUMENTO VIDEOJUEGO -->
+    <dialog
+      id="documento_videojuego"
+      class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+      style="background-color: rgb(214, 184, 184)"
+    >
+      <!-- Header -->
+      <div class="flex w-full h-auto justify-center items-center">
+        <div
+          class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+        >
+          <h2 style="font-size: 40px">DOCUMENTO - VIDEOJUEGO</h2>
+        </div>
+        <div
+          onclick="document.getElementById('documento_videojuego').close();"
+          class="flex w-1/12 h-auto justify-center cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </div>
+        <!--Header End-->
+      </div>
+      <div
+      style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh; /* Ajusta la altura según sea necesario */
+      /*background-color: #f0f0f0;  Solo para resaltar el div */
+      padding-top: 0px;
+    "
+>
+  <iframe
+    src="docs/DOCUMENTO VIDEOJUEGO.pdf"
+    style="
+      width: 90%;
+      height: 700px;
+      border: none;
+    "
+  ></iframe>
+</div>
+
+      
+    </dialog>
+
+    
+    <!-- MODAL VIDEO PROTOTIPO -->
+    <dialog
+      id="video_prototipo"
+      class="h-auto w-11/12 md:w-95% p-5 bg-white rounded-md"
+      style="background-color: rgb(214, 184, 184)"
+    >
+      <!-- Header -->
+      <div class="flex w-full h-auto justify-center items-center">
+        <div
+          class="flex w-10/12 h-auto py-3 justify-center items-center text-2xl font-bold"
+        >
+          
+        </div>
+        <div
+          onclick="document.getElementById('video_prototipo').close();"
+          class="flex w-1/12 h-auto justify-center cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </div>
+        <!--Header End-->
+      </div>
+      <div style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh; /* Ajusta la altura según sea necesario */
+      /*background-color: #f0f0f0;  Solo para resaltar el div */
+      padding-top: 0px;
+    ">
+        <iframe width="90%" height="700" src="https://www.youtube.com/embed/4XvfpCz_vh8" title="Crea tu primer juego 2D en Unity desde cero" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
+      
+    </dialog>
+
+
+    
+
+
+    <!-- Sección del Equipo --------------------------------------------------->
+    <section
+      class="pt-20 pb-20"
+      id="team"
+      style="background-color: rgb(245, 249, 246)"
+    >
+      <div class="flex flex-wrap justify-center text-center mb-24">
+        <div class="w-full lg:w-6/12 px-4">
+          <h2 class="text-4xl font-semibold text-blueGray-700">
+            Nuestro Equipo
+          </h2>
+          <!--<p class="text-lg leading-relaxed m-4 text-blueGray-500">
+            According to the National Oceanic and Atmospheric Administration,
+            Ted, Scambos, NSIDClead scentist, puts the potentially record
+            maximum.
+          </p>-->
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-center">
+        <div class="w-full md:w-6/12 lg:w-2/12 lg:mb-0 mb-12 px-8">
+          <div class="px-6">
+            <img
+              alt="..."
+              src="https://i.pinimg.com/736x/04/26/97/042697ed3bf0ad7876683527bb33bcbb.jpg"
+              class="shadow-lg rounded-full mx-auto max-w-120-px"
+            />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold text-blueGray-700">
+                Jesus Chancayauri
+              </h5>
+              <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                Web Developer
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-2/12 lg:mb-0 mb-12 px-8">
+          <div class="px-6">
+            <img
+              alt="..."
+              src="img/jhonatan.jpeg"
+              class="shadow-lg rounded-full mx-auto max-w-120-px"
+            />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold text-blueGray-700">
+                Jhonatan Uscca
+              </h5>
+              <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                Marketing Specialist
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-2/12 lg:mb-0 mb-12 px-8">
+          <div class="px-6">
+            <img
+              alt="..."
+              src="img/jayan.jpeg"
+              class="shadow-lg rounded-full mx-auto max-w-120-px"
+            />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold text-blueGray-700">Jayan Caceres</h5>
+              <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                UI/UX Designer
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-2/12 lg:mb-0 mb-12 px-8">
+          <div class="px-6">
+            <img
+              alt="..."
+              src="https://i.pinimg.com/736x/1f/81/01/1f810137dfabac15d8791de40478b4ee.jpg"
+              class="shadow-lg rounded-full mx-auto max-w-120-px"
+            />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold text-blueGray-700">Berly Diaz</h5>
+              <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                Founder and CEO
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-2/12 lg:mb-0 mb-12 px-8">
+          <div class="px-6">
+            <img
+              alt="..."
+              src="https://i.pinimg.com/474x/4c/dc/0b/4cdc0b4c2089dedecc2ae366280ac528.jpg"
+              class="shadow-lg rounded-full mx-auto max-w-120-px"
+            />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold text-blueGray-700">
+                Leonardo Montoya
+              </h5>
+              <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                Founder and CEO
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer
+      id="contact"
+      class="text-white py-6"
+      style="background: rgb(85, 83, 88)"
+    >
+      <div class="container mx-auto text-center" style="font-size: 20px">
+        <p style="color: rgb(138, 172, 67)">
+          © 2024 Mi Sitio. Todos los derechos reservados.
+        </p>
+        <ul class="flex justify-center space-x-4 mt-4">
+          <li><a href="#" class="hover:text-gray-200">Términos</a></li>
+          <li><a href="#" class="hover:text-gray-200">Privacidad</a></li>
+          <li><a href="#" class="hover:text-gray-200">Contacto</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
